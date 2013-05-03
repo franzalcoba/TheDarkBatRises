@@ -14,6 +14,8 @@
     NSArray * imageArrayBatFlyRight;
     NSArray * imageArrayBatFlyLeft;
 }
+@property int flyDirection;
+
 - (void)batFlyUpDown;
 - (void)batFlyLeft;
 - (void)batFlyRight;

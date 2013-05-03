@@ -7,8 +7,15 @@
 //
 
 #import "GameViewController.h"
+#import "TitlePageViewController.h"
 
 #define bat_RADIUS 15
+enum{
+    up = 0,
+    down,
+    left,
+    right
+};
 
 @interface GameViewController ()
 
@@ -37,24 +44,40 @@
         newX = 55 + bat_RADIUS;
     
    
-    
     CGPoint newCenter = CGPointMake(newX, batFly.center.y);
     batFly.center = newCenter;
     
     if (valueX <= 0){
-        [batFly batFlyLeft];
-        [[self view] addSubview:batFly];
-        DLog(@"aw %d",newX);
+        if( ![batFly isAnimating] || batFly.flyDirection != left)
+        {
+            [batFly batFlyLeft];
+            [[self view] addSubview:batFly];
+            [batFly startAnimating];
+            DLog(@"aw %d",newX);
+        }
     } else {
-        [batFly batFlyRight];
-        [[self view] addSubview:batFly];
-        DLog(@"we");
+        if( ![batFly isAnimating] || batFly.flyDirection != right)
+        {
+            [batFly batFlyRight];
+            [[self view] addSubview:batFly];
+            [batFly startAnimating];
+            DLog(@"we");
+        }
     }
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [backButton addTarget:self
+                   action:@selector(backToTitle:)
+         forControlEvents:UIControlEventTouchDown];
+    [backButton setImage:[UIImage imageNamed:@"return-button.png"] forState:UIControlStateNormal];
+    backButton.frame = CGRectMake(5.0, 5.0, 40.0, 40.0);
+    [[self view] addSubview:backButton];
+    backButton = nil;
     
 	batFly = [[BatCharacter alloc] initWithFrame:
                              CGRectMake(100, 125, 150, 130)];
@@ -67,7 +90,13 @@
     [[UIAccelerometer sharedAccelerometer] setDelegate:self];
 }
 
-
+-(IBAction)backToTitle:(id)sender
+{
+    TitlePageViewController *titlePage = [[TitlePageViewController alloc] init];
+    [titlePage setModalTransitionStyle: UIModalTransitionStyleCrossDissolve];
+    [self presentViewController:titlePage animated:YES completion:nil];
+    [titlePage release];
+}
 
 - (void)didReceiveMemoryWarning
 {

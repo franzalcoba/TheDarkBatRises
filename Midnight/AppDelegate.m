@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "GameViewController.h"
+#import "TitlePageViewController.h"
 
 @implementation AppDelegate
 
@@ -22,13 +23,14 @@
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     self.window.backgroundColor = [UIColor whiteColor];
     
-    GameViewController *gameController = [[GameViewController alloc] init];
-    [self.window setRootViewController:gameController];
+    TitlePageViewController *titlePageController = [[TitlePageViewController alloc] init];
+    [self.window setRootViewController:titlePageController];
+    [titlePageController release];
     
     [self.window makeKeyAndVisible];
     return YES;
     
-    [gameController release];
+    [titlePageController release];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

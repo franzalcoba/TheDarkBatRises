@@ -9,6 +9,7 @@
 #import "BatCharacter.h"
 
 @implementation BatCharacter
+@synthesize flyDirection;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -29,13 +30,13 @@
                                   [UIImage imageNamed:@"8.png"],
                                   [UIImage imageNamed:@"9.png"],
                                   nil];
-        
     }
     return self;
 }
 
 - (void)batFlyUpDown
 {
+    flyDirection = 0;
     [self setAnimationImages:imageArrayBatFlyUpDown];
     [self setAnimationDuration:0.5];
     [self setContentMode:UIViewContentModeBottomLeft];
@@ -44,6 +45,7 @@
 
 - (void)batFlyLeft
 {
+    flyDirection = 2;
     [self setAnimationImages:imageArrayBatFlyLeft];
     [self setAnimationDuration:0.5];
     [self setContentMode:UIViewContentModeBottomLeft];
@@ -52,6 +54,7 @@
 
 - (void)batFlyRight
 {
+    flyDirection = 3;
     [self setAnimationImages:imageArrayBatFlyRight];
     [self setAnimationDuration:0.5];
     [self setContentMode:UIViewContentModeBottomLeft];

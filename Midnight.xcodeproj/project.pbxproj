@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		1007EE1B17334D3200514AAD /* BatCharacter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1007EE1A17334D3200514AAD /* BatCharacter.m */; };
+		1007EE1F17335E0100514AAD /* TitlePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1007EE1D17335E0100514AAD /* TitlePageViewController.m */; };
+		1007EE2017335E0100514AAD /* TitlePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1007EE1E17335E0100514AAD /* TitlePageViewController.xib */; };
+		1007EE25173361BE00514AAD /* Graveyard.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1007EE24173361BE00514AAD /* Graveyard.jpg */; };
+		1007EE2A17336D9500514AAD /* HighScoresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1007EE2917336D9500514AAD /* HighScoresViewController.m */; };
+		1007EE2D17336DAC00514AAD /* InstructionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1007EE2C17336DAC00514AAD /* InstructionsViewController.m */; };
+		1007EE311733880700514AAD /* return-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 1007EE301733880700514AAD /* return-button.png */; };
 		105F53E917324F2D006CA762 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 105F53E617324F2D006CA762 /* 3.png */; };
 		105F53EA17324F2D006CA762 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 105F53E717324F2D006CA762 /* 2.png */; };
 		105F53EB17324F2D006CA762 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 105F53E817324F2D006CA762 /* 1.png */; };
@@ -32,6 +38,15 @@
 /* Begin PBXFileReference section */
 		1007EE1917334D3200514AAD /* BatCharacter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BatCharacter.h; sourceTree = "<group>"; };
 		1007EE1A17334D3200514AAD /* BatCharacter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BatCharacter.m; sourceTree = "<group>"; };
+		1007EE1C17335E0100514AAD /* TitlePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitlePageViewController.h; sourceTree = "<group>"; };
+		1007EE1D17335E0100514AAD /* TitlePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitlePageViewController.m; sourceTree = "<group>"; };
+		1007EE1E17335E0100514AAD /* TitlePageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TitlePageViewController.xib; sourceTree = "<group>"; };
+		1007EE24173361BE00514AAD /* Graveyard.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Graveyard.jpg; sourceTree = "<group>"; };
+		1007EE2817336D9500514AAD /* HighScoresViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HighScoresViewController.h; sourceTree = "<group>"; };
+		1007EE2917336D9500514AAD /* HighScoresViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighScoresViewController.m; sourceTree = "<group>"; };
+		1007EE2B17336DAC00514AAD /* InstructionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstructionsViewController.h; sourceTree = "<group>"; };
+		1007EE2C17336DAC00514AAD /* InstructionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstructionsViewController.m; sourceTree = "<group>"; };
+		1007EE301733880700514AAD /* return-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "return-button.png"; sourceTree = "<group>"; };
 		105F53E617324F2D006CA762 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
 		105F53E717324F2D006CA762 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
 		105F53E817324F2D006CA762 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
@@ -72,6 +87,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1007EE211733617B00514AAD /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				1007EE301733880700514AAD /* return-button.png */,
+				1007EE24173361BE00514AAD /* Graveyard.jpg */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		1007EE2617336D2500514AAD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1007EE1917334D3200514AAD /* BatCharacter.h */,
+				1007EE1A17334D3200514AAD /* BatCharacter.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		1007EE2717336D3B00514AAD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				105F53EC17325041006CA762 /* GameViewController.h */,
+				105F53ED17325041006CA762 /* GameViewController.m */,
+				1007EE1C17335E0100514AAD /* TitlePageViewController.h */,
+				1007EE1D17335E0100514AAD /* TitlePageViewController.m */,
+				1007EE1E17335E0100514AAD /* TitlePageViewController.xib */,
+				1007EE2817336D9500514AAD /* HighScoresViewController.h */,
+				1007EE2917336D9500514AAD /* HighScoresViewController.m */,
+				1007EE2B17336DAC00514AAD /* InstructionsViewController.h */,
+				1007EE2C17336DAC00514AAD /* InstructionsViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		105F53E417324EFC006CA762 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,12 +175,11 @@
 		108C9F42173246E2006FB730 /* Midnight */ = {
 			isa = PBXGroup;
 			children = (
+				1007EE2617336D2500514AAD /* Model */,
+				1007EE2717336D3B00514AAD /* Controller */,
+				1007EE211733617B00514AAD /* Assets */,
 				108C9F4B173246E2006FB730 /* AppDelegate.h */,
 				108C9F4C173246E2006FB730 /* AppDelegate.m */,
-				105F53EC17325041006CA762 /* GameViewController.h */,
-				105F53ED17325041006CA762 /* GameViewController.m */,
-				1007EE1917334D3200514AAD /* BatCharacter.h */,
-				1007EE1A17334D3200514AAD /* BatCharacter.m */,
 				108C9F43173246E2006FB730 /* Supporting Files */,
 			);
 			path = Midnight;
@@ -216,6 +264,9 @@
 				105F53F8173257D0006CA762 /* 9.png in Resources */,
 				105F53F9173257D0006CA762 /* 8.png in Resources */,
 				105F53FA173257D0006CA762 /* 7.png in Resources */,
+				1007EE2017335E0100514AAD /* TitlePageViewController.xib in Resources */,
+				1007EE25173361BE00514AAD /* Graveyard.jpg in Resources */,
+				1007EE311733880700514AAD /* return-button.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,6 +281,9 @@
 				108C9F4D173246E2006FB730 /* AppDelegate.m in Sources */,
 				105F53EE17325041006CA762 /* GameViewController.m in Sources */,
 				1007EE1B17334D3200514AAD /* BatCharacter.m in Sources */,
+				1007EE1F17335E0100514AAD /* TitlePageViewController.m in Sources */,
+				1007EE2A17336D9500514AAD /* HighScoresViewController.m in Sources */,
+				1007EE2D17336DAC00514AAD /* InstructionsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
