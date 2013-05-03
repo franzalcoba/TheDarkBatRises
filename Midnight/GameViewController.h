@@ -13,7 +13,7 @@
 {
     float valueX;
     BatCharacter *batFly;
+    
 }
 @property BOOL right;
-
 @end
