@@ -1,0 +1,358 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1007EE1B17334D3200514AAD /* BatCharacter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1007EE1A17334D3200514AAD /* BatCharacter.m */; };
+		105F53E917324F2D006CA762 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 105F53E617324F2D006CA762 /* 3.png */; };
+		105F53EA17324F2D006CA762 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 105F53E717324F2D006CA762 /* 2.png */; };
+		105F53EB17324F2D006CA762 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 105F53E817324F2D006CA762 /* 1.png */; };
+		105F53EE17325041006CA762 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 105F53ED17325041006CA762 /* GameViewController.m */; };
+		105F53F5173257D0006CA762 /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 105F53EF173257D0006CA762 /* 4.png */; };
+		105F53F6173257D0006CA762 /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = 105F53F0173257D0006CA762 /* 5.png */; };
+		105F53F7173257D0006CA762 /* 6.png in Resources */ = {isa = PBXBuildFile; fileRef = 105F53F1173257D0006CA762 /* 6.png */; };
+		105F53F8173257D0006CA762 /* 9.png in Resources */ = {isa = PBXBuildFile; fileRef = 105F53F2173257D0006CA762 /* 9.png */; };
+		105F53F9173257D0006CA762 /* 8.png in Resources */ = {isa = PBXBuildFile; fileRef = 105F53F3173257D0006CA762 /* 8.png */; };
+		105F53FA173257D0006CA762 /* 7.png in Resources */ = {isa = PBXBuildFile; fileRef = 105F53F4173257D0006CA762 /* 7.png */; };
+		108C9F3D173246E2006FB730 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 108C9F3C173246E2006FB730 /* UIKit.framework */; };
+		108C9F3F173246E2006FB730 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 108C9F3E173246E2006FB730 /* Foundation.framework */; };
+		108C9F41173246E2006FB730 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 108C9F40173246E2006FB730 /* CoreGraphics.framework */; };
+		108C9F47173246E2006FB730 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 108C9F45173246E2006FB730 /* InfoPlist.strings */; };
+		108C9F49173246E2006FB730 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 108C9F48173246E2006FB730 /* main.m */; };
+		108C9F4D173246E2006FB730 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 108C9F4C173246E2006FB730 /* AppDelegate.m */; };
+		108C9F4F173246E2006FB730 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 108C9F4E173246E2006FB730 /* Default.png */; };
+		108C9F51173246E2006FB730 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 108C9F50173246E2006FB730 /* Default@2x.png */; };
+		108C9F53173246E2006FB730 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 108C9F52173246E2006FB730 /* Default-568h@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1007EE1917334D3200514AAD /* BatCharacter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BatCharacter.h; sourceTree = "<group>"; };
+		1007EE1A17334D3200514AAD /* BatCharacter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BatCharacter.m; sourceTree = "<group>"; };
+		105F53E617324F2D006CA762 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
+		105F53E717324F2D006CA762 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
+		105F53E817324F2D006CA762 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		105F53EC17325041006CA762 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		105F53ED17325041006CA762 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		105F53EF173257D0006CA762 /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
+		105F53F0173257D0006CA762 /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.png; sourceTree = "<group>"; };
+		105F53F1173257D0006CA762 /* 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 6.png; sourceTree = "<group>"; };
+		105F53F2173257D0006CA762 /* 9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 9.png; sourceTree = "<group>"; };
+		105F53F3173257D0006CA762 /* 8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8.png; sourceTree = "<group>"; };
+		105F53F4173257D0006CA762 /* 7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 7.png; sourceTree = "<group>"; };
+		108C9F39173246E2006FB730 /* Midnight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Midnight.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		108C9F3C173246E2006FB730 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		108C9F3E173246E2006FB730 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		108C9F40173246E2006FB730 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		108C9F44173246E2006FB730 /* Midnight-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Midnight-Info.plist"; sourceTree = "<group>"; };
+		108C9F46173246E2006FB730 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		108C9F48173246E2006FB730 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		108C9F4A173246E2006FB730 /* Midnight-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Midnight-Prefix.pch"; sourceTree = "<group>"; };
+		108C9F4B173246E2006FB730 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		108C9F4C173246E2006FB730 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		108C9F4E173246E2006FB730 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		108C9F50173246E2006FB730 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		108C9F52173246E2006FB730 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		108C9F36173246E2006FB730 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				108C9F3D173246E2006FB730 /* UIKit.framework in Frameworks */,
+				108C9F3F173246E2006FB730 /* Foundation.framework in Frameworks */,
+				108C9F41173246E2006FB730 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		105F53E417324EFC006CA762 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				105F53E517324F0A006CA762 /* Bat Sprites */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		105F53E517324F0A006CA762 /* Bat Sprites */ = {
+			isa = PBXGroup;
+			children = (
+				105F53EF173257D0006CA762 /* 4.png */,
+				105F53F0173257D0006CA762 /* 5.png */,
+				105F53F1173257D0006CA762 /* 6.png */,
+				105F53F2173257D0006CA762 /* 9.png */,
+				105F53F3173257D0006CA762 /* 8.png */,
+				105F53F4173257D0006CA762 /* 7.png */,
+				105F53E617324F2D006CA762 /* 3.png */,
+				105F53E717324F2D006CA762 /* 2.png */,
+				105F53E817324F2D006CA762 /* 1.png */,
+			);
+			name = "Bat Sprites";
+			sourceTree = "<group>";
+		};
+		108C9F30173246E2006FB730 = {
+			isa = PBXGroup;
+			children = (
+				108C9F42173246E2006FB730 /* Midnight */,
+				108C9F3B173246E2006FB730 /* Frameworks */,
+				108C9F3A173246E2006FB730 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		108C9F3A173246E2006FB730 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				108C9F39173246E2006FB730 /* Midnight.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		108C9F3B173246E2006FB730 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				108C9F3C173246E2006FB730 /* UIKit.framework */,
+				108C9F3E173246E2006FB730 /* Foundation.framework */,
+				108C9F40173246E2006FB730 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		108C9F42173246E2006FB730 /* Midnight */ = {
+			isa = PBXGroup;
+			children = (
+				108C9F4B173246E2006FB730 /* AppDelegate.h */,
+				108C9F4C173246E2006FB730 /* AppDelegate.m */,
+				105F53EC17325041006CA762 /* GameViewController.h */,
+				105F53ED17325041006CA762 /* GameViewController.m */,
+				1007EE1917334D3200514AAD /* BatCharacter.h */,
+				1007EE1A17334D3200514AAD /* BatCharacter.m */,
+				108C9F43173246E2006FB730 /* Supporting Files */,
+			);
+			path = Midnight;
+			sourceTree = "<group>";
+		};
+		108C9F43173246E2006FB730 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				105F53E417324EFC006CA762 /* Assets */,
+				108C9F44173246E2006FB730 /* Midnight-Info.plist */,
+				108C9F45173246E2006FB730 /* InfoPlist.strings */,
+				108C9F48173246E2006FB730 /* main.m */,
+				108C9F4A173246E2006FB730 /* Midnight-Prefix.pch */,
+				108C9F4E173246E2006FB730 /* Default.png */,
+				108C9F50173246E2006FB730 /* Default@2x.png */,
+				108C9F52173246E2006FB730 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		108C9F38173246E2006FB730 /* Midnight */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 108C9F56173246E2006FB730 /* Build configuration list for PBXNativeTarget "Midnight" */;
+			buildPhases = (
+				108C9F35173246E2006FB730 /* Sources */,
+				108C9F36173246E2006FB730 /* Frameworks */,
+				108C9F37173246E2006FB730 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Midnight;
+			productName = Midnight;
+			productReference = 108C9F39173246E2006FB730 /* Midnight.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		108C9F31173246E2006FB730 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Franz Carelle Alcoba";
+			};
+			buildConfigurationList = 108C9F34173246E2006FB730 /* Build configuration list for PBXProject "Midnight" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 108C9F30173246E2006FB730;
+			productRefGroup = 108C9F3A173246E2006FB730 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				108C9F38173246E2006FB730 /* Midnight */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		108C9F37173246E2006FB730 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				108C9F47173246E2006FB730 /* InfoPlist.strings in Resources */,
+				108C9F4F173246E2006FB730 /* Default.png in Resources */,
+				108C9F51173246E2006FB730 /* Default@2x.png in Resources */,
+				108C9F53173246E2006FB730 /* Default-568h@2x.png in Resources */,
+				105F53E917324F2D006CA762 /* 3.png in Resources */,
+				105F53EA17324F2D006CA762 /* 2.png in Resources */,
+				105F53EB17324F2D006CA762 /* 1.png in Resources */,
+				105F53F5173257D0006CA762 /* 4.png in Resources */,
+				105F53F6173257D0006CA762 /* 5.png in Resources */,
+				105F53F7173257D0006CA762 /* 6.png in Resources */,
+				105F53F8173257D0006CA762 /* 9.png in Resources */,
+				105F53F9173257D0006CA762 /* 8.png in Resources */,
+				105F53FA173257D0006CA762 /* 7.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		108C9F35173246E2006FB730 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				108C9F49173246E2006FB730 /* main.m in Sources */,
+				108C9F4D173246E2006FB730 /* AppDelegate.m in Sources */,
+				105F53EE17325041006CA762 /* GameViewController.m in Sources */,
+				1007EE1B17334D3200514AAD /* BatCharacter.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		108C9F45173246E2006FB730 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				108C9F46173246E2006FB730 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		108C9F54173246E2006FB730 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		108C9F55173246E2006FB730 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		108C9F57173246E2006FB730 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jhermin Cruz (723WF65B7J)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jhermin Cruz (723WF65B7J)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Midnight/Midnight-Prefix.pch";
+				INFOPLIST_FILE = "Midnight/Midnight-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "4A3D8327-8EDA-4453-9B28-5BC7C04B2CA4";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4A3D8327-8EDA-4453-9B28-5BC7C04B2CA4";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		108C9F58173246E2006FB730 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jhermin Cruz (723WF65B7J)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jhermin Cruz (723WF65B7J)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Midnight/Midnight-Prefix.pch";
+				INFOPLIST_FILE = "Midnight/Midnight-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "4A3D8327-8EDA-4453-9B28-5BC7C04B2CA4";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4A3D8327-8EDA-4453-9B28-5BC7C04B2CA4";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		108C9F34173246E2006FB730 /* Build configuration list for PBXProject "Midnight" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				108C9F54173246E2006FB730 /* Debug */,
+				108C9F55173246E2006FB730 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		108C9F56173246E2006FB730 /* Build configuration list for PBXNativeTarget "Midnight" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				108C9F57173246E2006FB730 /* Debug */,
+				108C9F58173246E2006FB730 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 108C9F31173246E2006FB730 /* Project object */;
+}
