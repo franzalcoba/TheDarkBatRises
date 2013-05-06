@@ -16,9 +16,14 @@
     NSTimer *aTimer;
     float valueX;
     BatCharacter *batFly;
+    
+    float dy;
+    NSTimer *timer;
+    
 }
 @property BOOL right;
 
 - (void)moveImage:(UIImageView *)image duration:(NSTimeInterval)duration
             curve:(int)curve x:(CGFloat)x y:(CGFloat)y;
+
 @end
