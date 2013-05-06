@@ -95,7 +95,7 @@ enum{
     [[UIAccelerometer sharedAccelerometer] setDelegate:self];
     
     dy = 5;
-    [self animate];
+    timer = [NSTimer scheduledTimerWithTimeInterval:1.0/10.0 target:self selector:@selector(batDescend) userInfo:NULL repeats:YES];
 }
 
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -103,18 +103,13 @@ enum{
     UITouch *touch = [[event allTouches] anyObject];
     
     if (touch) {
-        //        //CGPoint prevPoint = [touch previousLocationInView:self.view];
-        //        batFly.frame = CGRectOffset(batFly.frame, 0, -1);
-        //        [self timer];
-        NSLog(@"aw");
-        [self timerMethod];
-        [timer invalidate];
-    } else {
-        [self animate];
+         CGRect f = batFly.frame;
+        f.origin.y -= 30;
+        batFly.frame = CGRectOffset(f, 0, -1);
     }
-
 }
 
+/*
 -(void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [[event allTouches] anyObject];
     
@@ -127,18 +122,18 @@ enum{
         [self animate];
     }
 }
+*/
 
--(void)animate
+-(void)batDescend
 {    
     if (CGRectContainsRect(self.view.frame, CGRectOffset(batFly.frame, 0, dy)) == false) {
         NSLog(@"Deads");
+        //[timer invalidate];
     }
-    
     batFly.frame = CGRectOffset(batFly.frame, 0, dy);
-    timer = [NSTimer scheduledTimerWithTimeInterval:1.0/30.0 target:self selector:@selector(animate) userInfo:NULL repeats:NO];
-
 }
 
+/*
 -(void)timerMethod
 {
     NSLog(@"aw");
@@ -148,6 +143,7 @@ enum{
     //batFly.frame = CGRectOffset(batFly.frame, 0, dy);
     //timer = [NSTimer scheduledTimerWithTimeInterval:1.0/30.0 target:self selector:@selector(timerMethod) userInfo:NULL repeats:NO];
 }
+*/
 
 -(IBAction)backToTitle:(id)sender
 {
