@@ -69,5 +69,12 @@
     // Drawing code
 }
 */
+- (void)dealloc
+{
+    [imageArrayBatFlyLeft release];
+    [imageArrayBatFlyRight release];
+    [imageArrayBatFlyUpDown release];
+    [super dealloc];
+}
 
 @end

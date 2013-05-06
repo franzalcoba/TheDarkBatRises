@@ -10,6 +10,8 @@
 #import "TitlePageViewController.h"
 
 #define bat_RADIUS 15
+#define max_enemy   3
+
 enum{
     up = 0,
     down,
