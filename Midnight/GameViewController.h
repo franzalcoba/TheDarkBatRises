@@ -14,6 +14,9 @@
     float valueX;
     BatCharacter *batFly;
     
+    float dy;
+    NSTimer *timer;
+    
 }
 @property BOOL right;
 @end

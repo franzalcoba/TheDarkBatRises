@@ -86,22 +86,68 @@ enum{
     backButton = nil;
     
 	batFly = [[BatCharacter alloc] initWithFrame:
-                             CGRectMake(100, 125, 150, 130)];
+                             CGRectMake(240, 50, 150, 130)];
     [batFly batFlyUpDown];
     [batFly setUserInteractionEnabled:YES];
     [[self view] addSubview:batFly];
     
     [[UIAccelerometer sharedAccelerometer] setUpdateInterval:1.0/30.0];
     [[UIAccelerometer sharedAccelerometer] setDelegate:self];
-}
-
--(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     
+    dy = 5;
+    [self animate];
+}
+
+-(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
     UITouch *touch = [[event allTouches] anyObject];
-    CGPoint location = [touch locationInView:touch.view];
+    
+    if (touch) {
+        //        //CGPoint prevPoint = [touch previousLocationInView:self.view];
+        //        batFly.frame = CGRectOffset(batFly.frame, 0, -1);
+        //        [self timer];
+        NSLog(@"aw");
+        [self timerMethod];
+        [timer invalidate];
+    } else {
+        [self animate];
+    }
 
 }
 
+-(void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+    UITouch *touch = [[event allTouches] anyObject];
+    
+    if (touch) {
+//        //CGPoint prevPoint = [touch previousLocationInView:self.view];
+//        batFly.frame = CGRectOffset(batFly.frame, 0, -1);
+//        [self timer];
+        [self timerMethod];
+    } else {
+        [self animate];
+    }
+}
+
+-(void)animate
+{    
+    if (CGRectContainsRect(self.view.frame, CGRectOffset(batFly.frame, 0, dy)) == false) {
+        NSLog(@"Deads");
+    }
+    
+    batFly.frame = CGRectOffset(batFly.frame, 0, dy);
+    timer = [NSTimer scheduledTimerWithTimeInterval:1.0/30.0 target:self selector:@selector(animate) userInfo:NULL repeats:NO];
+
+}
+
+-(void)timerMethod
+{
+    NSLog(@"aw");
+    CGRect f = batFly.frame;
+    f.origin.y -= 10;
+    batFly.frame = CGRectOffset(batFly.frame, 0, -1);
+    //batFly.frame = CGRectOffset(batFly.frame, 0, dy);
+    //timer = [NSTimer scheduledTimerWithTimeInterval:1.0/30.0 target:self selector:@selector(timerMethod) userInfo:NULL repeats:NO];
+}
 
 -(IBAction)backToTitle:(id)sender
 {
