@@ -55,7 +55,6 @@ enum{
             [batFly batFlyLeft];
             [[self view] addSubview:batFly];
             [batFly startAnimating];
-            DLog(@"aw %d",newX);
         }
     } else {
         if( ![batFly isAnimating] || batFly.flyDirection != right)
@@ -63,7 +62,6 @@ enum{
             [batFly batFlyRight];
             [[self view] addSubview:batFly];
             [batFly startAnimating];
-            DLog(@"we");
         }
     }
 }
@@ -76,6 +74,12 @@ enum{
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    UIImageView *backGround = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 480, 320)];
+    [backGround setImage:[UIImage imageNamed:@"Graveyard.jpg"]];
+    [backGround setAlpha:0.9];
+    [[self view] addSubview:backGround];
+    [backGround release];
     
     UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [backButton addTarget:self
@@ -94,7 +98,7 @@ enum{
 
     //DISPLAY BAT CHARACTER
     batFly = [[BatCharacter alloc] initWithFrame:
-                             CGRectMake(100, 125, 150, 130)];
+                             CGRectMake(240, 50, 150, 130)];
     
     [batFly batFlyUpDown];
     [[self view] addSubview:batFly];
@@ -102,7 +106,57 @@ enum{
     //Setup accelerometer
     [[UIAccelerometer sharedAccelerometer] setUpdateInterval:1.0/30.0];
     [[UIAccelerometer sharedAccelerometer] setDelegate:self];
+    
+    dy = 5;
+    timer = [NSTimer scheduledTimerWithTimeInterval:1.0/10.0 target:self selector:@selector(batDescend) userInfo:NULL repeats:YES];
 }
+
+-(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch = [[event allTouches] anyObject];
+    
+    if (touch) {
+         CGRect f = batFly.frame;
+        f.origin.y -= 30;
+        batFly.frame = CGRectOffset(f, 0, -1);
+    }
+}
+
+/*
+-(void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+    UITouch *touch = [[event allTouches] anyObject];
+    
+    if (touch) {
+//        //CGPoint prevPoint = [touch previousLocationInView:self.view];
+//        batFly.frame = CGRectOffset(batFly.frame, 0, -1);
+//        [self timer];
+        [self timerMethod];
+    } else {
+        [self animate];
+    }
+}
+*/
+
+-(void)batDescend
+{    
+    if (CGRectContainsRect(self.view.frame, CGRectOffset(batFly.frame, 0, dy)) == false) {
+        NSLog(@"Deads");
+        //[timer invalidate];
+    }
+    batFly.frame = CGRectOffset(batFly.frame, 0, dy);
+}
+
+/*
+-(void)timerMethod
+{
+    NSLog(@"aw");
+    CGRect f = batFly.frame;
+    f.origin.y -= 10;
+    batFly.frame = CGRectOffset(batFly.frame, 0, -1);
+    //batFly.frame = CGRectOffset(batFly.frame, 0, dy);
+    //timer = [NSTimer scheduledTimerWithTimeInterval:1.0/30.0 target:self selector:@selector(timerMethod) userInfo:NULL repeats:NO];
+}
+*/
 
 -(IBAction)backToTitle:(id)sender
 {

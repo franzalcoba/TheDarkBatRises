@@ -8,12 +8,21 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Midnight/GameViewController.m"
+<<<<<<< HEAD
          timestampString = "389513822.417765"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "134"
          endingLineNumber = "134"
          landmarkName = "-createEnemy:"
+=======
+         timestampString = "389522043.894344"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "130"
+         endingLineNumber = "130"
+         landmarkName = "-batDescend"
+>>>>>>> branch_ryan
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -21,6 +30,7 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Midnight/GameViewController.m"
+<<<<<<< HEAD
          timestampString = "389513822.417765"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
@@ -28,6 +38,15 @@
          endingLineNumber = "123"
          landmarkName = "-createEnemy:"
          landmarkType = "5">
+=======
+         timestampString = "389522043.894344"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "118"
+         endingLineNumber = "118"
+         landmarkName = "@implementation GameViewController"
+         landmarkType = "3">
+>>>>>>> branch_ryan
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>
