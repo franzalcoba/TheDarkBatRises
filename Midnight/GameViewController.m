@@ -86,7 +86,7 @@ enum{
     [[self view] addSubview:backButton];
     backButton = nil;
     
-    aTimer = [NSTimer scheduledTimerWithTimeInterval:6
+    aTimer = [NSTimer scheduledTimerWithTimeInterval:1
                                               target:self
                                             selector:@selector(createEnemy:)
                                             userInfo:nil
@@ -114,32 +114,42 @@ enum{
 
 - (void)createEnemy:(NSTimer *) theTimer
 {
-    float randomY = arc4random() % (int)(self.view.bounds.size.height);
-    float randomDelay = 1 + random() % 10;
+    float low_bound = -130;
+    float high_bound = 170;
+    float rndValue = (((float)arc4random()/0x100000000)*(high_bound-low_bound)+low_bound);
+    int intRndValueFromRightToLeft = (int)(rndValue + 0.5);
+    
+    float low_bound2 = -140;
+    float high_bound2 = 160;
+    float rndValue2 = (((float)arc4random()/0x100000000)*(high_bound2-low_bound2)+low_bound2);
+    int intRndValueFromLeftToRight = (int)(rndValue2 + 0.5);
+    
+    float randomDelay = 1 + random() % 8;
 
-    //NSLog(@"random Y: %0.0f ------ delay: %0.0f", randomY, randomDelay);
     int randomDirection = arc4random() % 2;
     
     if(randomDirection)
     {
         //Display enemy from left to right
-        EnemyShyGuy *shyguy = [[EnemyShyGuy alloc] initWithFrame:CGRectMake(0, 150, 150, 150)];
+        EnemyShyGuy *shyguy = [[EnemyShyGuy alloc] initWithFrame:CGRectMake(0, intRndValueFromRightToLeft, 150, 150)];
         [shyguy flyRight];
         
         [self moveImage:shyguy duration:randomDelay
                   curve:UIViewAnimationCurveLinear x:(self.view.bounds.size.width + 150) y:0.0];
         [[self view] addSubview:shyguy];
+        //NSLog(@"random Y: %0.0f ------ delay: %0.0f", randomY, randomDelay);
         [shyguy release];
     }
     else
     {
         //Display enemy from right to left
-        EnemyShyGuy *shyguy = [[EnemyShyGuy alloc] initWithFrame:CGRectMake(self.view.bounds.size.width, 0, 150, 150)];
+        EnemyShyGuy *shyguy = [[EnemyShyGuy alloc] initWithFrame:CGRectMake(self.view.bounds.size.width, intRndValueFromLeftToRight, 150, 150)];
         [shyguy flyLeft];
         
         [self moveImage:shyguy duration:randomDelay
                   curve:UIViewAnimationCurveLinear x:-(self.view.bounds.size.width + 150) y:0.0];
         [[self view] addSubview:shyguy];
+        //NSLog(@"random Y: %0.0f ------ delay: %0.0f", randomY, randomDelay);
         [shyguy release];
     }
     
