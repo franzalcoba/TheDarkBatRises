@@ -172,6 +172,23 @@ enum{
     [UIView commitAnimations];
 }
 
+//- (UIBezierPath *)pathAtInterval:(NSTimeInterval) interval
+//{
+//    UIBezierPath *path = [UIBezierPath bezierPath];
+//    
+//    [path moveToPoint:CGPointMake(0, self.bounds.size.height / 2.0)];
+//    
+//    CGFloat fractionOfSecond = interval - floor(interval);
+//    
+//    CGFloat yOffset = self.bounds.size.height * sin(fractionOfSecond * M_PI * 2.0);
+//    
+//    [path addCurveToPoint:CGPointMake(self.bounds.size.width, self.bounds.size.height / 2.0)
+//            controlPoint1:CGPointMake(self.bounds.size.width / 2.0, self.bounds.size.height / 2.0 - yOffset)
+//            controlPoint2:CGPointMake(self.bounds.size.width / 2.0, self.bounds.size.height / 2.0 + yOffset)];
+//    
+//    return path;
+//}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
