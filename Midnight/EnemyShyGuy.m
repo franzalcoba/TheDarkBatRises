@@ -15,10 +15,14 @@
     self = [super initWithFrame:frame];
     if (self) {
         imageArrayFlyLeft  = [[NSArray alloc] initWithObjects:
-                                   [UIImage imageNamed:@"shy-1.png"],
-                                   [UIImage imageNamed:@"shy-2.png"],
+                             [UIImage imageNamed:@"shy-1.png"],
+                             [UIImage imageNamed:@"shy-2.png"],
                                    nil];
-
+        
+        imageArrayFlyRight  = [[NSArray alloc] initWithObjects:
+                              [UIImage imageNamed:@"shy-3.png"],
+                              [UIImage imageNamed:@"shy-4.png"],
+                              nil];
     }
     return self;
 }
@@ -27,9 +31,18 @@
 {
     [self setAnimationImages:imageArrayFlyLeft];
     [self setAnimationDuration:0.5];
+    [self setContentMode:UIViewContentModeBottomRight];
+	[self startAnimating];
+}
+
+- (void)flyRight
+{
+    [self setAnimationImages:imageArrayFlyRight];
+    [self setAnimationDuration:0.5];
     [self setContentMode:UIViewContentModeBottomLeft];
 	[self startAnimating];
 }
+
 
 /*
 // Only override drawRect: if you perform custom drawing.

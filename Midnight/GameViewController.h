@@ -8,12 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import "BatCharacter.h"
+#import "EnemyShyGuy.h"
 
 @interface GameViewController : UIViewController <UIAccelerometerDelegate>
 {
+    
+    NSTimer *aTimer;
     float valueX;
     BatCharacter *batFly;
 }
 @property BOOL right;
 
+- (void)moveImage:(UIImageView *)image duration:(NSTimeInterval)duration
+            curve:(int)curve x:(CGFloat)x y:(CGFloat)y;
 @end

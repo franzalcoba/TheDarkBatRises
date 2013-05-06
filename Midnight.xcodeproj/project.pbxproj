@@ -24,9 +24,11 @@
 		1007EE4217339BA500514AAD /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1007EE3917339BA500514AAD /* 2.png */; };
 		1007EE4317339BA500514AAD /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1007EE3A17339BA500514AAD /* 1.png */; };
 		1043F6211733A37A00D20148 /* shy-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1043F61F1733A37A00D20148 /* shy-1.png */; };
-		1043F6221733A37A00D20148 /* shy-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1043F6201733A37A00D20148 /* shy-2.png */; };
 		1043F6251733A3EE00D20148 /* EnemyShyGuy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1043F6241733A3EE00D20148 /* EnemyShyGuy.m */; };
 		105F53EE17325041006CA762 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 105F53ED17325041006CA762 /* GameViewController.m */; };
+		1067C01817375A2A0062653C /* shy-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 1067C01617375A2A0062653C /* shy-3.png */; };
+		1067C01F173778300062653C /* shy-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1067C01E173778300062653C /* shy-2.png */; };
+		1067C0211737783C0062653C /* shy-4.png in Resources */ = {isa = PBXBuildFile; fileRef = 1067C0201737783C0062653C /* shy-4.png */; };
 		108C9F3D173246E2006FB730 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 108C9F3C173246E2006FB730 /* UIKit.framework */; };
 		108C9F3F173246E2006FB730 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 108C9F3E173246E2006FB730 /* Foundation.framework */; };
 		108C9F41173246E2006FB730 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 108C9F40173246E2006FB730 /* CoreGraphics.framework */; };
@@ -60,11 +62,13 @@
 		1007EE3917339BA500514AAD /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
 		1007EE3A17339BA500514AAD /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		1043F61F1733A37A00D20148 /* shy-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shy-1.png"; sourceTree = "<group>"; };
-		1043F6201733A37A00D20148 /* shy-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shy-2.png"; sourceTree = "<group>"; };
 		1043F6231733A3EE00D20148 /* EnemyShyGuy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnemyShyGuy.h; sourceTree = "<group>"; };
 		1043F6241733A3EE00D20148 /* EnemyShyGuy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnemyShyGuy.m; sourceTree = "<group>"; };
 		105F53EC17325041006CA762 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		105F53ED17325041006CA762 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		1067C01617375A2A0062653C /* shy-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shy-3.png"; sourceTree = "<group>"; };
+		1067C01E173778300062653C /* shy-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shy-2.png"; sourceTree = "<group>"; };
+		1067C0201737783C0062653C /* shy-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shy-4.png"; sourceTree = "<group>"; };
 		108C9F39173246E2006FB730 /* Midnight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Midnight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		108C9F3C173246E2006FB730 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		108C9F3E173246E2006FB730 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -136,7 +140,9 @@
 			isa = PBXGroup;
 			children = (
 				1043F61F1733A37A00D20148 /* shy-1.png */,
-				1043F6201733A37A00D20148 /* shy-2.png */,
+				1067C01E173778300062653C /* shy-2.png */,
+				1067C01617375A2A0062653C /* shy-3.png */,
+				1067C0201737783C0062653C /* shy-4.png */,
 			);
 			name = "ShyGuy Sprite";
 			sourceTree = "<group>";
@@ -279,7 +285,9 @@
 				1007EE4217339BA500514AAD /* 2.png in Resources */,
 				1007EE4317339BA500514AAD /* 1.png in Resources */,
 				1043F6211733A37A00D20148 /* shy-1.png in Resources */,
-				1043F6221733A37A00D20148 /* shy-2.png in Resources */,
+				1067C01817375A2A0062653C /* shy-3.png in Resources */,
+				1067C01F173778300062653C /* shy-2.png in Resources */,
+				1067C0211737783C0062653C /* shy-4.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,14 +380,14 @@
 		108C9F57173246E2006FB730 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Jhermin Cruz (723WF65B7J)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jhermin Cruz (723WF65B7J)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Rio Ohmori (GU37ZJ94M4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Rio Ohmori (GU37ZJ94M4)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Midnight/Midnight-Prefix.pch";
 				INFOPLIST_FILE = "Midnight/Midnight-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4A3D8327-8EDA-4453-9B28-5BC7C04B2CA4";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4A3D8327-8EDA-4453-9B28-5BC7C04B2CA4";
+				PROVISIONING_PROFILE = "B27B5188-18B7-4C97-8033-9C5EBCE90155";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B27B5188-18B7-4C97-8033-9C5EBCE90155";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -387,14 +395,14 @@
 		108C9F58173246E2006FB730 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Jhermin Cruz (723WF65B7J)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jhermin Cruz (723WF65B7J)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Rio Ohmori (GU37ZJ94M4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Rio Ohmori (GU37ZJ94M4)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Midnight/Midnight-Prefix.pch";
 				INFOPLIST_FILE = "Midnight/Midnight-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4A3D8327-8EDA-4453-9B28-5BC7C04B2CA4";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4A3D8327-8EDA-4453-9B28-5BC7C04B2CA4";
+				PROVISIONING_PROFILE = "B27B5188-18B7-4C97-8033-9C5EBCE90155";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B27B5188-18B7-4C97-8033-9C5EBCE90155";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

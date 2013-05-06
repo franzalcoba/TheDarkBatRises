@@ -10,6 +10,10 @@
 
 @interface EnemyShyGuy : UIImageView
 {
+    NSTimer *aTimer;
     NSArray *imageArrayFlyLeft;
+    NSArray *imageArrayFlyRight;
 }
+- (void)flyLeft;
+- (void)flyRight;
 @end

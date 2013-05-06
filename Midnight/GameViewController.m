@@ -68,6 +68,11 @@ enum{
     }
 }
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return (interfaceOrientation == UIInterfaceOrientationLandscapeLeft) || (interfaceOrientation == UIInterfaceOrientationLandscapeRight);
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -81,13 +86,20 @@ enum{
     [[self view] addSubview:backButton];
     backButton = nil;
     
-	batFly = [[BatCharacter alloc] initWithFrame:
+    aTimer = [NSTimer scheduledTimerWithTimeInterval:6
+                                              target:self
+                                            selector:@selector(createEnemy:)
+                                            userInfo:nil
+                                             repeats:YES];
+
+    //DISPLAY BAT CHARACTER
+    batFly = [[BatCharacter alloc] initWithFrame:
                              CGRectMake(100, 125, 150, 130)];
     
     [batFly batFlyUpDown];
-    
     [[self view] addSubview:batFly];
     
+    //Setup accelerometer
     [[UIAccelerometer sharedAccelerometer] setUpdateInterval:1.0/30.0];
     [[UIAccelerometer sharedAccelerometer] setDelegate:self];
 }
@@ -98,6 +110,56 @@ enum{
     [titlePage setModalTransitionStyle: UIModalTransitionStyleCrossDissolve];
     [self presentViewController:titlePage animated:YES completion:nil];
     [titlePage release];
+}
+
+- (void)createEnemy:(NSTimer *) theTimer
+{
+    float randomY = arc4random() % (int)(self.view.bounds.size.height);
+    float randomDelay = 1 + random() % 10;
+
+    //NSLog(@"random Y: %0.0f ------ delay: %0.0f", randomY, randomDelay);
+    int randomDirection = arc4random() % 2;
+    
+    if(randomDirection)
+    {
+        //Display enemy from left to right
+        EnemyShyGuy *shyguy = [[EnemyShyGuy alloc] initWithFrame:CGRectMake(0, 150, 150, 150)];
+        [shyguy flyRight];
+        
+        [self moveImage:shyguy duration:randomDelay
+                  curve:UIViewAnimationCurveLinear x:(self.view.bounds.size.width + 150) y:0.0];
+        [[self view] addSubview:shyguy];
+        [shyguy release];
+    }
+    else
+    {
+        //Display enemy from right to left
+        EnemyShyGuy *shyguy = [[EnemyShyGuy alloc] initWithFrame:CGRectMake(self.view.bounds.size.width, 0, 150, 150)];
+        [shyguy flyLeft];
+        
+        [self moveImage:shyguy duration:randomDelay
+                  curve:UIViewAnimationCurveLinear x:-(self.view.bounds.size.width + 150) y:0.0];
+        [[self view] addSubview:shyguy];
+        [shyguy release];
+    }
+    
+}
+
+- (void)moveImage:(UIImageView *)image duration:(NSTimeInterval)duration
+            curve:(int)curve x:(CGFloat)x y:(CGFloat)y
+{
+    // Setup the animation
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:duration];
+    [UIView setAnimationCurve:curve];
+    [UIView setAnimationBeginsFromCurrentState:YES];
+    
+    // The transform matrix
+    CGAffineTransform transform = CGAffineTransformMakeTranslation(x, y);
+    image.transform = transform;
+    
+    // Commit the changes
+    [UIView commitAnimations];
 }
 
 - (void)didReceiveMemoryWarning
