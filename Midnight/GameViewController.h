@@ -9,11 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "BatCharacter.h"
 #import "EnemyShyGuy.h"
+#import "Cross.h"
 
 @interface GameViewController : UIViewController <UIAccelerometerDelegate>
 {
-    
-    NSTimer *aTimer;
+    NSTimer *crossTimer;
+    NSTimer *shyTimer;
     float valueX;
     BatCharacter *batFly;
     

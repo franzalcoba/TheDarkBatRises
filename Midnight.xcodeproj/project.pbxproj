@@ -38,6 +38,9 @@
 		108C9F4F173246E2006FB730 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 108C9F4E173246E2006FB730 /* Default.png */; };
 		108C9F51173246E2006FB730 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 108C9F50173246E2006FB730 /* Default@2x.png */; };
 		108C9F53173246E2006FB730 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 108C9F52173246E2006FB730 /* Default-568h@2x.png */; };
+		AECE1F0817388DB200BA7C34 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AECE1F0717388DB200BA7C34 /* QuartzCore.framework */; };
+		AECE1F0B173899A100BA7C34 /* Cross.m in Sources */ = {isa = PBXBuildFile; fileRef = AECE1F0A173899A100BA7C34 /* Cross.m */; };
+		AECE1F0D1738A0B900BA7C34 /* cross.png in Resources */ = {isa = PBXBuildFile; fileRef = AECE1F0C1738A0B900BA7C34 /* cross.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +85,10 @@
 		108C9F4E173246E2006FB730 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		108C9F50173246E2006FB730 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		108C9F52173246E2006FB730 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		AECE1F0717388DB200BA7C34 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		AECE1F09173899A100BA7C34 /* Cross.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cross.h; sourceTree = "<group>"; };
+		AECE1F0A173899A100BA7C34 /* Cross.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cross.m; sourceTree = "<group>"; };
+		AECE1F0C1738A0B900BA7C34 /* cross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cross.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AECE1F0817388DB200BA7C34 /* QuartzCore.framework in Frameworks */,
 				108C9F3D173246E2006FB730 /* UIKit.framework in Frameworks */,
 				108C9F3F173246E2006FB730 /* Foundation.framework in Frameworks */,
 				108C9F41173246E2006FB730 /* CoreGraphics.framework in Frameworks */,
@@ -101,6 +109,7 @@
 		1007EE211733617B00514AAD /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				AECE1F0C1738A0B900BA7C34 /* cross.png */,
 				1043F61E1733A33C00D20148 /* ShyGuy Sprite */,
 				105F53E517324F0A006CA762 /* Bat Sprites */,
 				1007EE301733880700514AAD /* return-button.png */,
@@ -116,6 +125,8 @@
 				1007EE1A17334D3200514AAD /* BatCharacter.m */,
 				1043F6231733A3EE00D20148 /* EnemyShyGuy.h */,
 				1043F6241733A3EE00D20148 /* EnemyShyGuy.m */,
+				AECE1F09173899A100BA7C34 /* Cross.h */,
+				AECE1F0A173899A100BA7C34 /* Cross.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -183,6 +194,7 @@
 		108C9F3B173246E2006FB730 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AECE1F0717388DB200BA7C34 /* QuartzCore.framework */,
 				108C9F3C173246E2006FB730 /* UIKit.framework */,
 				108C9F3E173246E2006FB730 /* Foundation.framework */,
 				108C9F40173246E2006FB730 /* CoreGraphics.framework */,
@@ -288,6 +300,7 @@
 				1067C01817375A2A0062653C /* shy-3.png in Resources */,
 				1067C01F173778300062653C /* shy-2.png in Resources */,
 				1067C0211737783C0062653C /* shy-4.png in Resources */,
+				AECE1F0D1738A0B900BA7C34 /* cross.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,6 +319,7 @@
 				1007EE2A17336D9500514AAD /* HighScoresViewController.m in Sources */,
 				1007EE2D17336DAC00514AAD /* InstructionsViewController.m in Sources */,
 				1043F6251733A3EE00D20148 /* EnemyShyGuy.m in Sources */,
+				AECE1F0B173899A100BA7C34 /* Cross.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,6 +399,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Midnight/Midnight-Prefix.pch";
 				INFOPLIST_FILE = "Midnight/Midnight-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "B27B5188-18B7-4C97-8033-9C5EBCE90155";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B27B5188-18B7-4C97-8033-9C5EBCE90155";
@@ -400,6 +415,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Midnight/Midnight-Prefix.pch";
 				INFOPLIST_FILE = "Midnight/Midnight-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "B27B5188-18B7-4C97-8033-9C5EBCE90155";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B27B5188-18B7-4C97-8033-9C5EBCE90155";

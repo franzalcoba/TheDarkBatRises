@@ -90,11 +90,17 @@ enum{
     [[self view] addSubview:backButton];
     backButton = nil;
     
-    aTimer = [NSTimer scheduledTimerWithTimeInterval:1
+    shyTimer = [NSTimer scheduledTimerWithTimeInterval:1
                                               target:self
-                                            selector:@selector(createEnemy:)
+                                            selector:@selector(createEnemyShy:)
                                             userInfo:nil
                                              repeats:YES];
+    
+    crossTimer = [NSTimer scheduledTimerWithTimeInterval:1
+                                                target:self
+                                              selector:@selector(createEnemyCross:)
+                                              userInfo:nil
+                                               repeats:YES];
 
     //DISPLAY BAT CHARACTER
     batFly = [[BatCharacter alloc] initWithFrame:
@@ -102,6 +108,8 @@ enum{
     
     [batFly batFlyUpDown];
     [[self view] addSubview:batFly];
+    
+    
     
     //Setup accelerometer
     [[UIAccelerometer sharedAccelerometer] setUpdateInterval:1.0/30.0];
@@ -122,21 +130,6 @@ enum{
     }
 }
 
-/*
--(void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-    UITouch *touch = [[event allTouches] anyObject];
-    
-    if (touch) {
-//        //CGPoint prevPoint = [touch previousLocationInView:self.view];
-//        batFly.frame = CGRectOffset(batFly.frame, 0, -1);
-//        [self timer];
-        [self timerMethod];
-    } else {
-        [self animate];
-    }
-}
-*/
-
 -(void)batDescend
 {    
     if (CGRectContainsRect(self.view.frame, CGRectOffset(batFly.frame, 0, dy)) == false) {
@@ -146,18 +139,6 @@ enum{
     batFly.frame = CGRectOffset(batFly.frame, 0, dy);
 }
 
-/*
--(void)timerMethod
-{
-    NSLog(@"aw");
-    CGRect f = batFly.frame;
-    f.origin.y -= 10;
-    batFly.frame = CGRectOffset(batFly.frame, 0, -1);
-    //batFly.frame = CGRectOffset(batFly.frame, 0, dy);
-    //timer = [NSTimer scheduledTimerWithTimeInterval:1.0/30.0 target:self selector:@selector(timerMethod) userInfo:NULL repeats:NO];
-}
-*/
-
 -(IBAction)backToTitle:(id)sender
 {
     TitlePageViewController *titlePage = [[TitlePageViewController alloc] init];
@@ -166,47 +147,32 @@ enum{
     [titlePage release];
 }
 
-- (void)createEnemy:(NSTimer *) theTimer
+- (void)createEnemyShy:(NSTimer *) theTimer
 {
-    float low_bound = -130;
-    float high_bound = 170;
-    float rndValue = (((float)arc4random()/0x100000000)*(high_bound-low_bound)+low_bound);
-    int intRndValueFromRightToLeft = (int)(rndValue + 0.5);
-    
-    float low_bound2 = -140;
-    float high_bound2 = 160;
-    float rndValue2 = (((float)arc4random()/0x100000000)*(high_bound2-low_bound2)+low_bound2);
-    int intRndValueFromLeftToRight = (int)(rndValue2 + 0.5);
-    
-    float randomDelay = 1 + random() % 8;
 
-    int randomDirection = arc4random() % 2;
+    float randomDelay = 1 + random() % 8;
     
-    if(randomDirection)
-    {
-        //Display enemy from left to right
-        EnemyShyGuy *shyguy = [[EnemyShyGuy alloc] initWithFrame:CGRectMake(0, intRndValueFromRightToLeft, 150, 150)];
-        [shyguy flyRight];
-        
-        [self moveImage:shyguy duration:randomDelay
-                  curve:UIViewAnimationCurveLinear x:(self.view.bounds.size.width + 150) y:0.0];
-        [[self view] addSubview:shyguy];
-        //NSLog(@"random Y: %0.0f ------ delay: %0.0f", randomY, randomDelay);
-        [shyguy release];
-    }
-    else
-    {
-        //Display enemy from right to left
-        EnemyShyGuy *shyguy = [[EnemyShyGuy alloc] initWithFrame:CGRectMake(self.view.bounds.size.width, intRndValueFromLeftToRight, 150, 150)];
-        [shyguy flyLeft];
-        
-        [self moveImage:shyguy duration:randomDelay
-                  curve:UIViewAnimationCurveLinear x:-(self.view.bounds.size.width + 150) y:0.0];
-        [[self view] addSubview:shyguy];
-        //NSLog(@"random Y: %0.0f ------ delay: %0.0f", randomY, randomDelay);
-        [shyguy release];
+    EnemyShyGuy *shyguy = [[EnemyShyGuy alloc] init];
+    [[self view] addSubview:shyguy];
+    
+    if ([shyguy rightToLeft]) {
+        [self moveImage:shyguy duration:randomDelay curve:UIViewAnimationCurveLinear x:-(self.view.bounds.size.width + 42) y:0.0];
+    } else {
+        [self moveImage:shyguy duration:randomDelay curve:UIViewAnimationCurveLinear x:(self.view.bounds.size.width + 42) y:0.0];
     }
     
+    [shyguy release];
+}
+
+-(void)createEnemyCross:(NSTimer *) theTimer
+{
+    float randomDelay = 1 + random() % 8;
+    
+    Cross *cross = [[Cross alloc] init];
+    [self moveImage:cross duration:randomDelay curve:UIViewAnimationCurveLinear x:0.0 y:(self.view.bounds.size.height + 48)];
+    [[self view] addSubview:cross];
+    
+    [cross release];
 }
 
 - (void)moveImage:(UIImageView *)image duration:(NSTimeInterval)duration
