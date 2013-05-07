@@ -17,7 +17,7 @@
 #define bat_RADIUS 14
 #define max_enemy   3
 #define ASCEND_VALUE  25
- 
+
 enum{
     up = 0,
     down,
