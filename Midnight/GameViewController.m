@@ -9,8 +9,14 @@
 #import "GameViewController.h"
 #import "TitlePageViewController.h"
 
-#define bat_RADIUS 15
+#define SCREEN_WIDTH ((([UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationPortrait) || ([UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationPortraitUpsideDown)) ? [[UIScreen mainScreen] bounds].size.width : [[UIScreen mainScreen] bounds].size.height)
+#define SCREEN_HEIGHT ((([UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationPortrait) || ([UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationPortraitUpsideDown)) ? [[UIScreen mainScreen] bounds].size.height : [[UIScreen mainScreen] bounds].size.width)
+
+#define mainScreenRect CGRectMake(self.view.bounds.origin.x, self.view.bounds.origin.y, SCREEN_WIDTH, SCREEN_HEIGHT)
+
+#define bat_RADIUS 14
 #define max_enemy   3
+#define ASCEND_VALUE  25
 
 enum{
     up = 0,
@@ -39,11 +45,14 @@ enum{
     
     int newX = (int)(batFly.center.x + valueX);
     
-    if (newX > 540 - bat_RADIUS)
-        newX = 540 - bat_RADIUS;
+    int limit_r = SCREEN_WIDTH - bat_RADIUS;
+    int limit_l = 0 + bat_RADIUS;
     
-    if (newX < 55 + bat_RADIUS)
-        newX = 55 + bat_RADIUS;
+    if (newX > limit_r)
+        newX = limit_r;
+    
+    if (newX < limit_l)
+        newX = limit_l;
     
    
     CGPoint newCenter = CGPointMake(newX, batFly.center.y);
@@ -71,11 +80,28 @@ enum{
     return (interfaceOrientation == UIInterfaceOrientationLandscapeLeft) || (interfaceOrientation == UIInterfaceOrientationLandscapeRight);
 }
 
+-(CGRect)getCurrentScreenBoundsDependOnOrientation
+{
+    CGRect screenBounds = self.view.frame;//[UIScreen mainScreen].bounds ;
+    CGFloat width = CGRectGetWidth(screenBounds)  ;
+    CGFloat height = CGRectGetHeight(screenBounds) ;
+    UIInterfaceOrientation interfaceOrientation = [UIApplication sharedApplication].statusBarOrientation;
+    
+    if(UIInterfaceOrientationIsPortrait(interfaceOrientation)){
+        screenBounds.size = CGSizeMake(width, height);
+    }else if(UIInterfaceOrientationIsLandscape(interfaceOrientation)){
+        screenBounds.size = CGSizeMake(height, width);
+    }
+    return screenBounds;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    UIImageView *backGround = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 480, 320)];
+    game_over = FALSE;
+    
+    UIImageView *backGround = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
     [backGround setImage:[UIImage imageNamed:@"Graveyard.jpg"]];
     [backGround setAlpha:0.9];
     [[self view] addSubview:backGround];
@@ -101,15 +127,11 @@ enum{
                                               selector:@selector(createEnemyCross:)
                                               userInfo:nil
                                                repeats:YES];
-
-    //DISPLAY BAT CHARACTER
-    batFly = [[BatCharacter alloc] initWithFrame:
-                             CGRectMake(240, 50, 150, 130)];
     
+    //DISPLAY BAT CHARACTER
+    batFly = [[BatCharacter alloc] initWithFrame: CGRectMake(CGRectGetMidX(mainScreenRect) - bat_RADIUS,CGRectGetMidY(mainScreenRect), 28, 28)];
     [batFly batFlyUpDown];
     [[self view] addSubview:batFly];
-    
-    
     
     //Setup accelerometer
     [[UIAccelerometer sharedAccelerometer] setUpdateInterval:1.0/30.0];
@@ -121,22 +143,33 @@ enum{
 
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    UITouch *touch = [[event allTouches] anyObject];
+    //disable tapping on game over
+    if(!game_over){
+        UITouch *touch = [[event allTouches] anyObject];
     
-    if (touch) {
-         CGRect f = batFly.frame;
-        f.origin.y -= 30;
-        batFly.frame = CGRectOffset(f, 0, -1);
+        if (touch) {
+            CGRect f = batFly.frame;
+        
+            if((f.origin.y - ASCEND_VALUE) <= 0)
+                f.origin.y = 1;
+            else
+                f.origin.y -= ASCEND_VALUE;
+        
+            batFly.frame = CGRectOffset(f, 0, -1);
+        }
     }
 }
 
 -(void)batDescend
-{    
-    if (CGRectContainsRect(self.view.frame, CGRectOffset(batFly.frame, 0, dy)) == false) {
-        NSLog(@"Deads");
-        //[timer invalidate];
-    }
+{
     batFly.frame = CGRectOffset(batFly.frame, 0, dy);
+    
+    if (CGRectContainsRect(mainScreenRect, batFly.frame) == false) {
+        NSLog(@"Deads");
+        [timer invalidate];
+        timer = nil;
+        game_over = TRUE;
+    }
 }
 
 -(IBAction)backToTitle:(id)sender
@@ -149,7 +182,6 @@ enum{
 
 - (void)createEnemyShy:(NSTimer *) theTimer
 {
-
     float randomDelay = 1 + random() % 8;
     
     EnemyShyGuy *shyguy = [[EnemyShyGuy alloc] init];
