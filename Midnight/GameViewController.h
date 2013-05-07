@@ -20,7 +20,6 @@
     
     float dy;
     NSTimer *timer;
-    BOOL game_over;
     
 }
 @property BOOL right;
